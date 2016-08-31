@@ -8,6 +8,10 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', function(req, res) {
 	res.render('home.ejs');
+});
+
+app.get('/about', function(req, res) {
+	res.render('about.ejs');
 });	
 
 app.listen(3000, function() {
