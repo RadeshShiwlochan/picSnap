@@ -1,10 +1,14 @@
 var express = require('express'),
 	path    = require('path'),
 	bodyParser = require('body-parser'),
+	ejsTemp = require('ejs'),ejs,
 	app = express();
 
 app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static('public'));
+app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
 
 app.get('/', function(req, res) {
 	res.render('home.ejs');
