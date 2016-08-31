@@ -14,6 +14,17 @@ app.get('/about', function(req, res) {
 	res.render('about.ejs');
 });	
 
+app.use(function(err, req, res, next) {
+	console.error("Error Occurred");
+	console.error(err.stack);
+	res.status(500).render('error.ejs');
+});
+
+app.use(function(req,res, next) {
+	console.error("PAGE NOT FOUND!!");
+	res.render('error.ejs');
+});
+
 app.listen(3000, function() {
 	console.log("App running on port:3000");
 });
