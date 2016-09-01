@@ -27,6 +27,14 @@ app.get('/about', function(req, res) {
 	res.render('about.ejs');
 });	
 
+app.post('/signin', function(req, res) {
+	var username = req.body.username,
+		password = req.body.password;
+	console.log('This is the username ', username, 
+		        '  and this is the password', password);
+	res.render('userProfile.ejs');
+})
+
 app.use(function(err, req, res, next) {
 	console.error("Error Occurred");
 	console.error(err.stack);
