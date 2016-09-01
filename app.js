@@ -2,7 +2,16 @@ var express = require('express'),
 	path    = require('path'),
 	bodyParser = require('body-parser'),
 	ejsTemp = require('ejs'),ejs,
+	mongoClient = require('mongodb').MongoClient,db,
+	connect_url = 'mongodb://localhost:27017/picSnap',
 	app = express();
+
+mongoClient.connect(connect_url, function(err, database) {
+	if(err)
+		throw err;
+	console.log('Sucessfully connected to the Database');
+	db = database;
+});
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static('public'));
