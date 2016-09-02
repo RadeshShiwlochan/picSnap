@@ -6,6 +6,7 @@ var express = require('express'),
 	connect_url = 'mongodb://localhost:27017/picSnap',
 	app = express();
 
+//mongoClient for handling connection to mondodb.
 mongoClient.connect(connect_url, function(err, database) {
 	if(err)
 		throw err;
@@ -18,15 +19,17 @@ app.use(express.static('public'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-
+//get route for home page
 app.get('/', function(req, res) {
 	res.render('home.ejs');
 });
 
+//get route for about page
 app.get('/about', function(req, res) {
 	res.render('about.ejs');
 });	
 
+//post route for getting to userprofile
 app.post('/signin', function(req, res) {
 	var username = req.body.username,
 		password = req.body.password;
@@ -35,12 +38,14 @@ app.post('/signin', function(req, res) {
 	res.render('userProfile.ejs');
 })
 
+//error function for handling errors in the app
 app.use(function(err, req, res, next) {
 	console.error("Error Occurred");
 	console.error(err.stack);
 	res.status(500).render('error.ejs');
 });
 
+//error function for handling routes that do not exist
 app.use(function(req,res, next) {
 	console.error("PAGE NOT FOUND!!");
 	res.render('error.ejs');
