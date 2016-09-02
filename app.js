@@ -36,7 +36,11 @@ app.post('/signin', function(req, res) {
 	console.log('This is the username ', username, 
 		        '  and this is the password', password);
 	res.render('userProfile.ejs');
-})
+});
+
+app.post('/backtohome', function(req, res) {
+	res.render('home.ejs');
+});
 
 //error function for handling errors in the app
 app.use(function(err, req, res, next) {
