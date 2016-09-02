@@ -6,7 +6,8 @@ This project uses:
 	• MongoDB
 	• ejs
 	• css
+	• mutler
 
 Future Plans:
 
-I still have not figured out how to add the feature to upload pics as this project is a work in progress.	
+I still have not figured out how to add the feature to upload pics as this project is a work in progress. I am planing to use mutler for allowing the users to upload images.	
