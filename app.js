@@ -47,7 +47,16 @@ app.post('/useruploadpic', multer({dest: './public/images'}).single('upl'), func
 	var title = req.body.title;
 	var src   = req.file.filename;
 	db.collection('profilePics').insertOne({title: title, src: src});
+	res.render('userProfile.ejs');
 });
+
+//to render the pics
+app.get('/pics', function(req, res) {
+	var resultFromQuery = db.collection('profilePics').find();
+	//now pics is a cursor.
+    var pics = resultFromQuery.next();
+    res.render('pics', {pics: pics});
+})
 
 //error function for handling errors in the app
 app.use(function(err, req, res, next) {
