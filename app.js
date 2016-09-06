@@ -4,6 +4,7 @@ var express = require('express'),
 	ejsTemp = require('ejs'),ejs,
 	mongoClient = require('mongodb').MongoClient,db,
 	connect_url = 'mongodb://localhost:27017/picSnap',
+	multer      = require('multer'),
 	app = express();
 
 //mongoClient for handling connection to mondodb.
