@@ -43,6 +43,11 @@ app.post('/backtohome', function(req, res) {
 	res.render('home.ejs');
 });
 
+app.post('/useruploadpic', multer({dest: './public/images'}).single('upl'), function(req, res, next) {
+	var title = req.body.title;
+	var src   = req.file.filename;
+});
+
 //error function for handling errors in the app
 app.use(function(err, req, res, next) {
 	console.error("Error Occurred");
