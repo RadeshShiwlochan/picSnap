@@ -46,8 +46,8 @@ app.post('/backtohome', function(req, res) {
 app.post('/useruploadpic', multer({dest: './public/images'}).single('upl'), function(req, res, next) {
 	var title = req.body.title;
 	var src   = req.file.filename;
-	db.collection('profilePics').insertOne({title: title, src: src});
-	res.render('userProfile.ejs');
+		//db.collection('profilePics').insertOne({title: title, src: src});
+		res.render('picPage.ejs', {src : src });
 });
 
 //to render the pics
