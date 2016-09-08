@@ -8,4 +8,5 @@ This project uses:
 	• css
 	• Mutler.js
 
-Multer was used to upload files, namely pictures, to a folder that was specified in the route. The picture is then rendered to the view in the ordinary way of using html to portray the image. 	
+Multer was used to upload files, namely pictures, to a folder that was specified in the route. The picture is then rendered to the view in the ordinary way of using html to protray the image.
+ 	
