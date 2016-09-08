@@ -6,8 +6,6 @@ This project uses:
 	• MongoDB
 	• ejs
 	• css
-	• mutler
+	• Mutler.js
 
-Future Plans:
-
-I still have not figured out how to add the feature to upload pics as this project is a work in progress. I am planing to use mutler for allowing the users to upload images.	
+Multer was used to upload files, namely pictures, to a folder that was specified in the route. The picture is then rendered to the view in the ordinary way of using html to portray the image. 	
