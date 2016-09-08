@@ -46,10 +46,11 @@ app.post('/backtohome', function(req, res) {
 app.post('/useruploadpic', multer({dest: './public/images'}).single('upl'), function(req, res, next) {
 	var title = req.body.title;
 	var src   = req.file.filename;
+	var path = req.file['filename'];
 	console.log(req.body);
-	console.log(req.file);
+	console.log("This is path" , path);
 		//db.collection('profilePics').insertOne({title: title, src: src});
-		res.render('picPage.ejs', {src : src });
+		res.render('picPage.ejs', {src : path });
 		//res.status(204).end();
 });
 
